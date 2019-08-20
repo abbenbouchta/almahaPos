@@ -136,8 +136,8 @@
     </t>
 
     <t t-name="ActionpadWidget">
-        <div class="actionpad">
-            <button t-attf-class='button set-customer #{ ( widget.pos.get_client() and widget.pos.get_client().name.length > 10) ? "decentered" : "" }' >
+       <div class="actionpad">
+            <!--<button t-attf-class='button set-customer #{ ( widget.pos.get_client() and widget.pos.get_client().name.length > 10) ? "decentered" : "" }' >
                 <i class='fa fa-user' /> 
                 <t t-if="widget.pos.get_client()">
                     <t t-esc="widget.pos.get_client().name" />
@@ -145,7 +145,7 @@
                 <t t-if="!widget.pos.get_client()">
                     Customer
                 </t>
-            </button>
+            </button>-->
             <button class='button pay'>
                 <div class='pay-circle'>
                     <i class='fa fa-chevron-right' /> 
@@ -156,7 +156,7 @@
     </t>
 
     <t t-name="NumpadWidget">
-        <div class="numpad">
+       <!-- <div class="numpad">
             <button class="input-button number-char">1</button>
             <button class="input-button number-char">2</button>
             <button class="input-button number-char">3</button>
@@ -178,7 +178,7 @@
             <button class="input-button numpad-backspace">
                 <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
             </button>
-        </div>
+        </div>-->
     </t>
 
     <t t-name="CategoryButton">
@@ -712,9 +712,6 @@
                     </span>
                 </div>
                 <div class="centered-content touch-scrollable">
-                    <div class="button print_invoice">
-                        <i class='fa fa-print'></i> Print Invoice
-                    </div>
                     <div class="button print">
                         <i class='fa fa-print'></i> Print Receipt
                     </div>
@@ -1120,7 +1117,7 @@
         <div class="modal-dialog">
             <div class="popup popup-textinput">
                 <p class="title"><t t-esc=" widget.options.title || '' " /></p>
-                <textarea><t t-esc="widget.options.value" /></textarea>
+                <textarea rows="10" cols="40"><t t-esc="widget.options.value" /></textarea>
                 <div class="footer">
                     <div class="button confirm">
                         Ok 
